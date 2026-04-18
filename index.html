@@ -105,14 +105,16 @@
       display: flex; flex-direction: column; gap: 0.75rem;
     }
     .slide-dots .dot-wrap {
-      display: flex; align-items: center; gap: 0.5rem; justify-content: flex-end;
+      position: relative; display: flex; align-items: center; justify-content: flex-end;
     }
     .slide-dots .dot-label {
-      font-size: 0.6875rem; color: rgba(0,0,0,0); white-space: nowrap;
-      transition: color 0.2s; pointer-events: none; text-align: right;
+      position: absolute; right: calc(100% + 0.5rem);
+      font-size: 0.6875rem; white-space: nowrap; text-align: right;
+      opacity: 0; transition: opacity 0.2s; pointer-events: none;
+      color: rgba(0,0,0,0.4);
     }
     .slide-dots .dot-wrap:hover .dot-label,
-    .slide-dots .dot-wrap.active .dot-label { color: rgba(0,0,0,0.4); }
+    .slide-dots .dot-wrap.active .dot-label { opacity: 1; }
     .slide-dots button {
       width: 4px; border: none; cursor: pointer; border-radius: 2px;
       transition: all 0.2s;
