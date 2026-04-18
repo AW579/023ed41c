@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forma Design — Sales & Adoption Strategy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.65;
+      padding: 3rem 1.5rem 6rem;
+    }
+    .container { max-width: 52rem; margin: 0 auto; }
+    .top-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .top-bar .label {
+      font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(0,0,0,0.35); font-weight: 600;
+    }
+    .top-bar nav { display: flex; gap: 1.5rem; }
+    .top-bar nav a {
+      font-size: 0.8125rem; color: rgba(0,0,0,0.4); text-decoration: none;
+      transition: color 0.15s; font-weight: 500;
+    }
+    .top-bar nav a:hover { color: #000; }
+    .top-bar nav a.active { color: #000; border-bottom: 2px solid #000; padding-bottom: 2px; }
+
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; margin-top: 4rem; }
+    h2 { font-size: 1.375rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.08); }
+    h3 { font-size: 1.0625rem; font-weight: 600; margin-top: 1.75rem; margin-bottom: 0.5rem; }
+    p { margin-bottom: 0.75rem; color: rgba(0,0,0,0.7); }
+    .subtitle { font-size: 1rem; color: rgba(0,0,0,0.4); margin-bottom: 2rem; }
+    blockquote {
+      border-left: 3px solid rgba(0,0,0,0.1); padding: 0.75rem 1rem;
+      margin: 1rem 0; background: rgba(0,0,0,0.02); border-radius: 0 0.5rem 0.5rem 0;
+      font-size: 0.9375rem; color: rgba(0,0,0,0.55); font-style: italic;
+    }
+    .prompt { color: rgba(0,0,0,0.35); font-style: italic; }
+    strong { color: #000; }
+
+    .meta-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9375rem; }
+    .meta-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .meta-table td:first-child { font-weight: 600; white-space: nowrap; width: 12rem; color: rgba(0,0,0,0.5); }
+
+    table.matrix { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; }
+    table.matrix th {
+      text-align: left; padding: 0.625rem 0.75rem; font-weight: 600; font-size: 0.75rem;
+      letter-spacing: 0.05em; text-transform: uppercase; color: rgba(0,0,0,0.4);
+      border-bottom: 2px solid rgba(0,0,0,0.1); background: rgba(0,0,0,0.02);
+    }
+    table.matrix td {
+      padding: 0.625rem 0.75rem; border-bottom: 1px solid rgba(0,0,0,0.06);
+      vertical-align: top; color: rgba(0,0,0,0.65);
+    }
+    table.matrix tr:hover td { background: rgba(0,0,0,0.015); }
+    table.matrix .empty { color: rgba(0,0,0,0.2); font-style: italic; }
+
+    .tag { display: inline-block; padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; }
+    .tag-now { background: rgba(16,185,129,0.12); color: #059669; }
+    .tag-next { background: rgba(59,130,246,0.12); color: #2563eb; }
+    .tag-later { background: rgba(147,51,234,0.12); color: #7c3aed; }
+    .tag-tbd { background: rgba(0,0,0,0.05); color: rgba(0,0,0,0.35); }
+
+    .timeframes { display: flex; gap: 0.75rem; margin: 0.5rem 0 1.5rem; }
+
+    ul, ol { padding-left: 1.25rem; margin-bottom: 0.75rem; color: rgba(0,0,0,0.65); }
+    li { margin-bottom: 0.375rem; }
+
+    @media (max-width: 640px) {
+      body { padding: 2rem 1rem 4rem; }
+      h1 { font-size: 1.5rem; margin-top: 3rem; }
+      .top-bar { padding: 0.75rem 1rem; }
+      table.matrix { font-size: 0.8125rem; }
+      table.matrix th, table.matrix td { padding: 0.5rem; }
+      .meta-table td:first-child { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span class="label">Strategy Offsite — Oslo</span>
+    <nav>
+      <a href="index.html">Agenda</a>
+      <a href="strategy.html" class="active">Strategy</a>
+      <a href="notes.html">Notes</a>
+    </nav>
+  </div>
+
+  <div class="container">
+
+    <h1>Forma Design — Sales & Adoption Strategy</h1>
+    <p class="subtitle">Multiple teams, one strategy. Keep this document crisp — one or two pages, no more.</p>
+
+    <table class="meta-table">
+      <tr><td>Last updated</td><td class="prompt">To be completed</td></tr>
+      <tr><td>Writer</td><td>Anders Wester</td></tr>
+      <tr><td>Strategy owner</td><td class="prompt">To be confirmed during the workshop</td></tr>
+      <tr><td>Product scope</td><td>Forma Design — Site Design and Building Design bundles</td></tr>
+      <tr><td>Contributing squads</td><td>Sales, Customer Success, Growth, Strategic Accounts, Marketing</td></tr>
+    </table>
+
+    <!-- Mission & Scope -->
+    <h2>Mission & Scope</h2>
+
+    <h3>Mission</h3>
+    <p class="prompt">1–2 sentences on why this strategy unit exists. Not a product mission — the shared mission across Sales, CS, Growth, and SA for how we drive the initial sale and sustained adoption of Forma Design together.</p>
+
+    <h3>In-Scope</h3>
+    <ul>
+      <li><strong>Product set:</strong> <span class="prompt">—</span></li>
+      <li><strong>Geographies:</strong> <span class="prompt">—</span></li>
+      <li><strong>On-ramps:</strong> <span class="prompt">—</span></li>
+      <li><strong>Customer journey stages:</strong> <span class="prompt">—</span></li>
+    </ul>
+
+    <h3>Out of Scope</h3>
+    <p class="prompt">What are we intentionally not going to do?</p>
+
+    <!-- Current Reality -->
+    <h2>Current Reality</h2>
+
+    <h3>Engagement Data</h3>
+    <p class="prompt">What the data tells us about where we are today. Activation rates, usage patterns, drop-offs, and retention signals — by segment and geography.</p>
+
+    <h3>Functional Alignment</h3>
+    <p class="prompt">Where do our teams agree on roles — and where are there gaps, overlaps, or unspoken assumptions?</p>
+
+    <!-- Customer Focus -->
+    <h2>Customer Focus</h2>
+
+    <p><strong>Primary customer:</strong> <span class="prompt">—</span></p>
+    <p><strong>ICP for scalable sales motions:</strong> <span class="prompt">What does a good account look like? What signals indicate readiness?</span></p>
+    <p><strong>Target accounts:</strong> <span class="prompt">Specific account lists or segments.</span></p>
+
+    <!-- Themes & Problems -->
+    <h2>Themes & Problems</h2>
+    <blockquote>This is about the sales, CS, and support process — not product gaps. What will we face in selling and supporting the perfect customer journey?</blockquote>
+
+    <h3>Trunk Problem</h3>
+    <p class="prompt">The overarching problem this strategy unit is solving. State it in terms of what the customer experiences today because our teams lack a shared model.</p>
+
+    <h3>Prioritised Themes</h3>
+    <p style="font-size:0.875rem; color:rgba(0,0,0,0.45); margin-bottom:0.75rem;">The 5 gap areas prioritised during the workshop. Each theme has a single accountable team.</p>
+
+    <table class="matrix">
+      <thead>
+        <tr><th>#</th><th>Theme</th><th>Accountable Team</th><th>Key Problems</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td>2</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td>3</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td>4</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td>5</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Evidence</h3>
+    <p class="prompt">Data points and account examples that support why these themes and problems exist.</p>
+
+    <!-- Strategy Matrix -->
+    <h2>Strategy Matrix</h2>
+    <blockquote>The core output. For each theme: what problem are we solving, what bet will we make, who delivers, who advises. This table is the strategy.</blockquote>
+
+    <table class="matrix">
+      <thead>
+        <tr><th>Theme</th><th>Problem</th><th>Bet</th><th>What It Looks Like</th><th>Timeframe</th><th>Responsible</th><th>Advisor</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td><span class="tag tag-tbd">TBD</span></td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td><span class="tag tag-tbd">TBD</span></td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td><span class="tag tag-tbd">TBD</span></td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td><span class="tag tag-tbd">TBD</span></td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td><span class="tag tag-tbd">TBD</span></td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td><span class="tag tag-tbd">TBD</span></td><td class="empty">—</td><td class="empty">—</td></tr>
+      </tbody>
+    </table>
+
+    <div class="timeframes">
+      <span class="tag tag-now">Now — 0–3 months</span>
+      <span class="tag tag-next">Next — 3–6 months</span>
+      <span class="tag tag-later">Later — 6–12 months</span>
+    </div>
+
+    <h3>Immediate Priorities</h3>
+    <p style="font-size:0.875rem; color:rgba(0,0,0,0.45); margin-bottom:0.75rem;">2–3 bets to prioritise for the upcoming month.</p>
+    <table class="matrix">
+      <thead>
+        <tr><th>Bet</th><th>First Steps</th><th>Responsible</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Parking Lot</h3>
+    <p class="prompt">Nice-to-haves parked for the mid-May follow-up. Review if still relevant, decide what to trade in.</p>
+
+    <!-- Metrics -->
+    <h2>Metrics</h2>
+    <p style="font-size:0.875rem; color:rgba(0,0,0,0.45); margin-bottom:0.75rem;">Directional targets — to be refined with data as we learn.</p>
+    <table class="matrix">
+      <thead>
+        <tr><th>Metric</th><th>Baseline</th><th>Target</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Activation rate (new licences get into product)</td><td class="empty">TBD</td><td><strong>75%</strong></td><td class="empty">—</td></tr>
+        <tr><td>First strike rate (existing entitlements run meaningful analysis)</td><td class="empty">TBD</td><td><strong>50%</strong></td><td class="empty">—</td></tr>
+        <tr><td>Engaged retention rate (meaningful action at least 2×/month)</td><td class="empty">TBD</td><td class="empty">TBD</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Operating Cadence -->
+    <h2>Operating Cadence</h2>
+    <p style="font-size:0.875rem; color:rgba(0,0,0,0.45); margin-bottom:0.75rem;">How this strategy unit stays aligned after the workshop.</p>
+    <table class="matrix">
+      <thead>
+        <tr><th>Cadence</th><th>Format</th><th>Frequency</th><th>Owner</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Next Milestones</h3>
+    <ul>
+      <li><strong>30-day check-in:</strong> <span class="prompt">date TBD</span></li>
+      <li><strong>Mid-May follow-up:</strong> <span class="prompt">date TBD</span> — review parking lot bets, refine must-haves with detail</li>
+    </ul>
+
+  </div>
+
+</body>
+</html>

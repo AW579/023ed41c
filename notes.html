@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Workshop Meeting Notes — Strategy Offsite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.65;
+      padding: 3rem 1.5rem 6rem;
+    }
+    .container { max-width: 52rem; margin: 0 auto; }
+    .top-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .top-bar .label {
+      font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(0,0,0,0.35); font-weight: 600;
+    }
+    .top-bar nav { display: flex; gap: 1.5rem; }
+    .top-bar nav a {
+      font-size: 0.8125rem; color: rgba(0,0,0,0.4); text-decoration: none;
+      transition: color 0.15s; font-weight: 500;
+    }
+    .top-bar nav a:hover { color: #000; }
+    .top-bar nav a.active { color: #000; border-bottom: 2px solid #000; padding-bottom: 2px; }
+
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; margin-top: 4rem; }
+    .day-header {
+      font-size: 1.625rem; font-weight: 700; margin-top: 3rem; margin-bottom: 1.5rem;
+      padding: 1rem 0; border-top: 2px solid #000; border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    h2 { font-size: 1.25rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.25rem; }
+    .session-meta {
+      font-size: 0.8125rem; color: rgba(0,0,0,0.35); margin-bottom: 1rem; font-weight: 500;
+    }
+    h3 { font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; color: rgba(0,0,0,0.7); }
+    p { margin-bottom: 0.75rem; color: rgba(0,0,0,0.7); }
+    .subtitle { font-size: 1rem; color: rgba(0,0,0,0.4); margin-bottom: 2rem; }
+    .prompt { color: rgba(0,0,0,0.25); font-style: italic; }
+    strong { color: #000; }
+
+    .focus-box {
+      padding: 0.75rem 1rem; border-radius: 0.5rem; margin: 0.75rem 0;
+      font-size: 0.9375rem;
+    }
+    .focus-box strong { font-size: 0.8125rem; display: block; margin-bottom: 0.25rem; }
+    .focus-blue { background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.15); }
+    .focus-blue strong { color: #2563eb; }
+
+    .notes-area {
+      min-height: 6rem; padding: 1rem; border-radius: 0.5rem;
+      background: rgba(0,0,0,0.015); border: 1px dashed rgba(0,0,0,0.1);
+      margin: 0.5rem 0 1rem; color: rgba(0,0,0,0.25); font-style: italic;
+      font-size: 0.9375rem;
+    }
+
+    table.commitments { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9375rem; }
+    table.commitments th {
+      text-align: left; padding: 0.625rem 0.75rem; font-weight: 600; font-size: 0.75rem;
+      letter-spacing: 0.05em; text-transform: uppercase; color: rgba(0,0,0,0.4);
+      border-bottom: 2px solid rgba(0,0,0,0.1); background: rgba(0,0,0,0.02);
+    }
+    table.commitments td {
+      padding: 0.625rem 0.75rem; border-bottom: 1px solid rgba(0,0,0,0.06);
+      vertical-align: top; color: rgba(0,0,0,0.65);
+    }
+    .empty { color: rgba(0,0,0,0.2); font-style: italic; }
+
+    hr { border: none; border-top: 1px solid rgba(0,0,0,0.06); margin: 2rem 0; }
+
+    @media (max-width: 640px) {
+      body { padding: 2rem 1rem 4rem; }
+      h1 { font-size: 1.5rem; margin-top: 3rem; }
+      .top-bar { padding: 0.75rem 1rem; }
+      .notes-area { min-height: 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <span class="label">Strategy Offsite — Oslo</span>
+    <nav>
+      <a href="index.html">Agenda</a>
+      <a href="strategy.html">Strategy</a>
+      <a href="notes.html" class="active">Notes</a>
+    </nav>
+  </div>
+
+  <div class="container">
+
+    <h1>Workshop Meeting Notes</h1>
+    <p class="subtitle">Sales & Adoption Strategy Offsite — April 20–21, 2026 — Oslo</p>
+    <p style="font-size:0.875rem; color:rgba(0,0,0,0.45);">
+      <strong style="color:rgba(0,0,0,0.55);">Attendees:</strong> Ken Nussbaum, Lilian Alberts, Chris Small, Ben Storey, Joe Marchiafava, James Wedding, Emma Dowey, Robin Franke, Lavinia Dieac, Joseph Price, Anders Wester
+    </p>
+
+    <!-- ============ DAY 1 ============ -->
+    <div class="day-header">Day 1 — Monday, April 20</div>
+
+    <!-- Session 1 -->
+    <h2>Session 1: Kickoff + Framing</h2>
+    <p class="session-meta">09:00–09:30</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      Confirm strategy owner, contributing squads, strategic OKRs. Listen for mission-seed language.
+    </div>
+    <h3>Key Takeaways</h3>
+    <div class="notes-area">To be completed after session</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">Observations the transcript won't capture</div>
+
+    <hr />
+
+    <!-- Session 2 -->
+    <h2>Session 2: Context + Expectations</h2>
+    <p class="session-meta">09:30–10:45</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      Each person's three answers: what their team does, expected role, expected other teams' roles. Capture gaps and contradictions between functions.
+    </div>
+    <h3>Key Takeaways</h3>
+    <div class="notes-area">To be completed after session</div>
+    <h3>Themes from Clustering</h3>
+    <div class="notes-area">What themes emerged during gap clustering?</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">Where did descriptions contradict expectations?</div>
+
+    <hr />
+
+    <!-- Session 3 -->
+    <h2>Session 3: Data + Insights</h2>
+    <p class="session-meta">11:00–12:00</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      Specific numbers — activation rates, NURR, Compare adoption, first-strike data, segment breakdowns. What surprised the group.
+    </div>
+    <h3>Key Takeaways</h3>
+    <div class="notes-area">To be completed after session</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">What data surprised the group or challenged assumptions?</div>
+
+    <hr />
+
+    <!-- Session 4 -->
+    <h2>Session 4: Mapping the Reality</h2>
+    <p class="session-meta">13:00–14:30</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      Two journeys — end-user product journey (Robin's demo) and customer adoption journey (Anders's account examples). Where nobody is helping. Where we relied on luck vs. a system.
+    </div>
+    <h3>Key Takeaways</h3>
+    <div class="notes-area">To be completed after session</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">What patterns did the group identify? Any "nobody helps them after..." revelations?</div>
+
+    <hr />
+
+    <!-- Session 5 -->
+    <h2>Session 5: Problem Mapping</h2>
+    <p class="session-meta">14:45–15:30</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      All problems on the wall, sorted into themes. Dot-vote on themes. Leadership confirms top 5 for Day 2.
+    </div>
+    <h3>Prioritised Themes (Top 5)</h3>
+    <div class="notes-area">Which themes carried forward? How many dots each?</div>
+    <h3>Parked Themes</h3>
+    <div class="notes-area">What didn't make the cut?</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">Did leadership change the prioritisation from the dot-vote? Any new themes discovered from orphan problems?</div>
+
+    <hr />
+
+    <!-- Session 6 -->
+    <h2>Session 6: What We're Testing</h2>
+    <p class="session-meta">15:30–16:15</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      Fin + Trig capabilities. Seeding, not solutioning — capture capabilities and possibilities.
+    </div>
+    <h3>Key Takeaways</h3>
+    <div class="notes-area">To be completed after session</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">Group reaction. Any "we could use this for..." statements.</div>
+
+    <hr />
+
+    <!-- Day 1 Close -->
+    <h2>Day 1 Close</h2>
+    <p class="session-meta">16:15–16:30</p>
+    <h3>Summary + Overnight Thinking Prompts</h3>
+    <div class="notes-area">To be completed</div>
+
+    <!-- ============ DAY 2 ============ -->
+    <div class="day-header">Day 2 — Tuesday, April 21</div>
+
+    <!-- Day 2 Opening -->
+    <h2>Day 2 Opening</h2>
+    <p class="session-meta">09:00–09:30</p>
+    <h3>Recap + Overnight Reflections</h3>
+    <div class="notes-area">Any shifts in thinking overnight? New ideas?</div>
+
+    <hr />
+
+    <!-- Session 7 -->
+    <h2>Session 7: ICP + Strategic Direction</h2>
+    <p class="session-meta">09:30–11:00</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      Primary customer definition, ICP for scalable sales motions, target segments/geos, mission statement, in-scope vs. out-of-scope.
+    </div>
+    <h3>Key Takeaways</h3>
+    <div class="notes-area">To be completed after session</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">Was there debate about broad vs. narrow targeting? Who took ownership of scope decisions?</div>
+
+    <hr />
+
+    <!-- Session 8 -->
+    <h2>Session 8: Key Bets + Initiatives</h2>
+    <p class="session-meta">12:00–13:30</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      Problem flowers per theme — initiatives radiating out. Must-have vs. nice-to-have. Responsible owners + advisor teams assigned.
+    </div>
+    <h3>Key Takeaways</h3>
+    <div class="notes-area">To be completed after session</div>
+    <h3>Must-Have Bets</h3>
+    <div class="notes-area">What got into must-have? What detail did pairs add?</div>
+    <h3>Parked (Nice-to-Haves)</h3>
+    <div class="notes-area">What was parked for mid-May?</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">Any resource concerns raised? How did ownership assignment go?</div>
+
+    <hr />
+
+    <!-- Session 9 -->
+    <h2>Session 9: Roles & Operating Model</h2>
+    <p class="session-meta">13:30–15:00</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      Finalise the strategy matrix: theme → accountable team → problems → bets → responsible → advisor. Grey zones resolved.
+    </div>
+    <h3>Key Takeaways</h3>
+    <div class="notes-area">To be completed after session</div>
+    <h3>Grey Zones Resolved</h3>
+    <div class="notes-area">Where were functions stepping on each other or leaving gaps? What was decided?</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">Moments of tension or clarification. Is the model viable with current capacity?</div>
+
+    <hr />
+
+    <!-- Session 10 -->
+    <h2>Session 10: Drafting the Strategy</h2>
+    <p class="session-meta">15:00–16:00</p>
+    <div class="focus-box focus-blue">
+      <strong>Focus</strong>
+      Group reviewing and editing the pre-filled strategy document. The test: "would you share this page with your team?"
+    </div>
+    <h3>Key Takeaways</h3>
+    <div class="notes-area">To be completed after session</div>
+    <h3>Facilitator Notes</h3>
+    <div class="notes-area">What language did the group sharpen? What gaps remain for mid-May?</div>
+
+    <hr />
+
+    <!-- Commitments + Close -->
+    <h2>Commitments + Close</h2>
+    <p class="session-meta">16:00–16:30</p>
+
+    <h3>Leader Commitments</h3>
+    <table class="commitments">
+      <thead>
+        <tr><th>Leader</th><th>Commitment</th><th>Timeline</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+        <tr><td class="empty">—</td><td class="empty">—</td><td class="empty">—</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Operating Cadence Decisions</h3>
+    <div class="notes-area">Monthly sync? Shared scorecard? Async updates? What format, who owns it?</div>
+
+    <h3>Mid-May Follow-up</h3>
+    <p><strong>Date:</strong> <span class="prompt">TBD</span></p>
+    <p><strong>Who writes up each output:</strong> <span class="prompt">TBD</span></p>
+
+  </div>
+
+</body>
+</html>
